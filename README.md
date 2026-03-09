@@ -1,1140 +1,218 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tampilan Coklat — Contoh</title>
-  <style>
-    :root{
-      --brown-1: #3b2f2f;
-      --brown-2: #6b4f3a;
-      --brown-3: #a67b5b;
-      --cream: #f6efe6;
-      --shadow: rgba(17,12,7,0.35);
-    }
-
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: linear-gradient(180deg, var(--brown-1) 0%, #2f2424 50%);
-      color:var(--cream);
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px;
-    }
-
-    .container{
-      width:100%;
-      max-width:1000px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.06));
-      border-radius:18px;
-      padding:28px;
-      box-shadow: 0 10px 30px var(--shadow);
-      display:grid;
-      grid-template-columns: 1fr 420px;
-      gap:24px;
-      align-items:center;
-    }
-
-    .left{
-      padding:10px 18px;
-    }
-    h1{
-      margin:0 0 8px 0;
-      font-size:28px;
-      letter-spacing:0.4px;
-      color:var(--cream);
-    }
-    p.lead{
-      margin:0 0 18px 0;
-      color: #e9dacb;
-      line-height:1.5;
-    }
-
-    .btn-row{
-      display:flex;
-      gap:12px;
-      margin-top:18px;
-    }
-    .btn{
-      background: linear-gradient(180deg,var(--brown-2),var(--brown-3));
-      border: none;
-      padding:10px 16px;
-      border-radius:10px;
-      color:var(--cream);
-      font-weight:600;
-      cursor:pointer;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-    }
-    .btn.ghost{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.06);
-      color: #f0e7de;
-    }
-
-    .card-right{
-      background: linear-gradient(180deg,#5a4436 0%, #442e22 100%);
-      border-radius:14px;
-      padding:18px;
-      box-shadow: inset 0 -6px 20px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.35);
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .cig-card{
-      width:100%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.08));
-      padding:14px;
-      border-radius:10px;
-      display:flex;
-      gap:14px;
-      align-items:center;
-    }
-
-    /* Stylized cigarette (SVG inside) */
-    .cig-visual{
-      width:130px;
-      height:60px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .cig-info{
-      flex:1;
-      color:#f3e9dd;
-    }
-    .muted{color:#e0cdbf; font-size:14px}
-
-    footer{
-      margin-top:8px;
-      font-size:12px;
-      color:#cfbdae;
-      opacity:0.9;
-    }
-
-    /* responsive */
-    @media (max-width:900px){
-      .container{grid-template-columns:1fr; padding:18px}
-      .cig-visual{width:100%; height:90px}
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="left">
-      <h1>Tampilan Coklat — Desain Rapi</h1>
-      <p class="lead">Desain ini menggunakan palet coklat hangat, tipografi modern, dan elemen visual sederhana. Di sebelah kanan ada ilustrasi rokok bergaya vektor (bukan foto) sehingga bebas hak cipta — cocok untuk mockup atau demo UI.</p>
-
-      <div class="btn-row">
-        <button class="btn">Lihat Detail</button>
-        <button class="btn ghost">Download</button>
-      </div>
-
-      <div style="margin-top:22px; background:rgba(0,0,0,0.12); padding:12px; border-radius:10px;">
-        <p style="margin:0; font-size:14px; color:#f1e7db">Catatan: Jika kamu ingin menampilkan <strong>gambar rokok nyata</strong> (foto), kirim gambarnya atau saya bisa ambil dari sumber bebas lisensi dan saya pasang ke desain.</p>
-      </div>
-
-      <footer>Contoh UI • Tema Coklat • 2025</footer>
-    </div>
-
-    <aside class="card-right">
-      <div class="cig-card">
-        <div class="cig-visual" aria-hidden="true">
-          <!-- Inline SVG: stylized cigarette -->
-          <svg width="220" height="80" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg" role="img">
-            <!-- Filter / shadow -->
-            <defs>
-              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.25"/>
-              </filter>
-            </defs>
-
-            <!-- cigarette body -->
-            <rect x="6" y="22" rx="10" ry="10" width="150" height="22" fill="#fff" stroke="#e6ddd2" />
-
-            <!-- tobacco end -->
-            <rect x="156" y="22" rx="8" ry="8" width="44" height="22" fill="#b97b4a" stroke="#9a5f37" />
-
-            <!-- filter tip -->
-            <rect x="198" y="22" rx="6" ry="6" width="12" height="22" fill="#cfa57b" stroke="#a77b4f" />
-
-            <!-- ash (subtle) -->
-            <ellipse cx="154" cy="33" rx="10" ry="4" fill="#3b2b2b" opacity="0.08" />
-
-            <!-- glow/inner lines -->
-            <line x1="20" y1="30" x2="140" y2="30" stroke="#f6efe6" stroke-opacity="0.06" stroke-width="2"/>
-
-            <!-- small smoke curls -->
-            <g transform="translate(-16,-20)" fill="none" stroke="#e9dccf" stroke-opacity="0.18" stroke-width="1.4">
-              <path d="M120 40 C118 36, 114 34, 112 30" />
-              <path d="M126 36 C125 32, 120 30, 118 26" />
-            </g>
-
-            <!-- subtle highlight -->
-            <rect x="12" y="24" rx="8" ry="8" width="8" height="18" fill="#fff3e8" opacity="0.06" />
-          </svg>
-        </div>
-
-        <div class="cig-info">
-          <div style="font-weight:700; font-size:16px;">Ilustrasi Rokok (Vektor)</div>
-          <div class="muted">Gaya minimal &amp; estetik — cocok untuk mockup, presentasi, atau demo UI.</div>
-        </div>
-      </div>
-
-      <div style="width:100%; display:flex; gap:10px; margin-top:8px;">
-        <div style="flex:1; background:rgba(255,255,255,0.03); padding:10px; border-radius:8px; text-align:center;">
-          <div style="font-weight:700;">Estetika</div>
-          <div class="muted">Coklat hangat</div>
-        </div>
-        <div style="flex:1; background:rgba(255,255,255,0.03); padding:10px; border-radius:8px; text-align:center;">
-          <div style="font-weight:700;">Lisensi</div>
-          <div class="muted">Vektor gratis</div>
-        </div>
-      </div>
-
-    </aside>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Demo — Analisis Sentimen Konten Digital</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0a0f1e;
-    --surface: #111827;
-    --surface2: #1a2235;
-    --border: #1e2d45;
-    --blue: #2E75B6;
-    --blue-light: #5ba3e8;
-    --blue-glow: rgba(46,117,182,0.25);
-    --neg: #ef4444;
-    --neg-bg: rgba(239,68,68,0.12);
-    --pos: #22c55e;
-    --pos-bg: rgba(34,197,94,0.12);
-    --neu: #f59e0b;
-    --neu-bg: rgba(245,158,11,0.12);
-    --text: #e2e8f0;
-    --text-muted: #64748b;
-    --accent: #38bdf8;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: 'Space Grotesk', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* Animated grid background */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(46,117,182,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(46,117,182,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* Glowing orbs */
-  .orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: 0;
-  }
-  .orb1 { width: 400px; height: 400px; background: rgba(46,117,182,0.15); top: -100px; right: -100px; }
-  .orb2 { width: 300px; height: 300px; background: rgba(56,189,248,0.08); bottom: 100px; left: -80px; }
-
-  .container {
-    position: relative;
-    z-index: 1;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 40px 24px 80px;
-  }
-
-  /* Header */
-  header {
-    text-align: center;
-    margin-bottom: 48px;
-    animation: fadeDown 0.6s ease both;
-  }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--blue-glow);
-    border: 1px solid rgba(46,117,182,0.4);
-    color: var(--blue-light);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    padding: 6px 14px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-  }
-  .badge::before { content: '●'; font-size: 8px; animation: pulse-dot 2s infinite; }
-
-  h1 {
-    font-size: clamp(26px, 5vw, 40px);
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
-  }
-  h1 span { color: var(--blue-light); }
-
-  .subtitle {
-    color: var(--text-muted);
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  /* Stats bar */
-  .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-bottom: 32px;
-    animation: fadeUp 0.6s 0.1s ease both;
-  }
-
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
-    text-align: center;
-  }
-
-  .stat-val {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--blue-light);
-    display: block;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  /* Main card */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    animation: fadeUp 0.6s 0.2s ease both;
-    margin-bottom: 20px;
-  }
-
-  .card-header {
-    padding: 18px 24px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--surface2);
-  }
-
-  .card-header h2 {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
-
-  textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: var(--text);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
-    padding: 24px;
-    resize: none;
-    min-height: 140px;
-    outline: none;
-  }
-
-  textarea::placeholder { color: var(--text-muted); }
-
-  /* Example chips */
-  .examples {
-    padding: 0 24px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .ex-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    align-self: center;
-    margin-right: 4px;
-  }
-
-  .chip {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: inherit;
-  }
-
-  .chip:hover {
-    border-color: var(--blue);
-    color: var(--blue-light);
-    background: var(--blue-glow);
-  }
-
-  .chip.neg:hover { border-color: var(--neg); color: var(--neg); background: var(--neg-bg); }
-  .chip.pos:hover { border-color: var(--pos); color: var(--pos); background: var(--pos-bg); }
-  .chip.neu:hover { border-color: var(--neu); color: var(--neu); background: var(--neu-bg); }
-
-  /* Buttons */
-  .actions {
-    padding: 16px 24px 24px;
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-
-  .btn-analyze {
-    flex: 1;
-    background: var(--blue);
-    color: white;
-    border: none;
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .btn-analyze:hover { background: var(--blue-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(46,117,182,0.4); }
-  .btn-analyze:active { transform: translateY(0); }
-  .btn-analyze:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
-  .btn-clear {
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    padding: 14px 20px;
-    border-radius: 10px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .btn-clear:hover { border-color: var(--text-muted); color: var(--text); }
-
-  /* Results */
-  .result-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    display: none;
-    animation: fadeUp 0.4s ease both;
-  }
-
-  .result-card.show { display: block; }
-
-  .result-header {
-    padding: 18px 24px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .result-header h2 { font-size: 15px; font-weight: 600; }
-
-  .timestamp {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    color: var(--text-muted);
-  }
-
-  .result-body { padding: 28px 24px; }
-
-  /* Verdict */
-  .verdict {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 28px;
-    padding: 20px 24px;
-    border-radius: 12px;
-    border: 1px solid;
-  }
-
-  .verdict.negatif { background: var(--neg-bg); border-color: rgba(239,68,68,0.3); }
-  .verdict.positif { background: var(--pos-bg); border-color: rgba(34,197,94,0.3); }
-  .verdict.netral  { background: var(--neu-bg); border-color: rgba(245,158,11,0.3); }
-
-  .verdict-icon { font-size: 40px; line-height: 1; }
-
-  .verdict-label {
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-  }
-
-  .verdict-text {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  .verdict.negatif .verdict-text { color: var(--neg); }
-  .verdict.positif .verdict-text { color: var(--pos); }
-  .verdict.netral  .verdict-text { color: var(--neu); }
-
-  .verdict-conf {
-    margin-left: auto;
-    text-align: right;
-  }
-
-  .conf-val {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 32px;
-    font-weight: 600;
-    display: block;
-  }
-
-  .verdict.negatif .conf-val { color: var(--neg); }
-  .verdict.positif .conf-val { color: var(--pos); }
-  .verdict.netral  .conf-val { color: var(--neu); }
-
-  .conf-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; }
-
-  /* Probability bars */
-  .prob-section { margin-bottom: 28px; }
-
-  .prob-title {
-    font-size: 12px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-  }
-
-  .prob-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 12px;
-  }
-
-  .prob-name {
-    width: 72px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .prob-bar-bg {
-    flex: 1;
-    height: 10px;
-    background: var(--surface2);
-    border-radius: 100px;
-    overflow: hidden;
-  }
-
-  .prob-bar {
-    height: 100%;
-    border-radius: 100px;
-    width: 0%;
-    transition: width 0.8s cubic-bezier(0.16,1,0.3,1);
-  }
-
-  .prob-pct {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 13px;
-    width: 48px;
-    text-align: right;
-    color: var(--text-muted);
-  }
-
-  /* Tokens section */
-  .tokens-section { margin-bottom: 20px; }
-  .tokens-title {
-    font-size: 12px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 12px;
-  }
-
-  .tokens-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .token {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    background: var(--surface2);
-    color: var(--text-muted);
-    transition: all 0.3s;
-  }
-
-  .token.key {
-    background: var(--blue-glow);
-    border-color: rgba(46,117,182,0.4);
-    color: var(--blue-light);
-  }
-
-  /* Pipeline steps */
-  .pipeline {
-    display: flex;
-    gap: 0;
-    margin-bottom: 28px;
-    background: var(--surface2);
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .pipe-step {
-    flex: 1;
-    padding: 10px 8px;
-    text-align: center;
-    font-size: 10px;
-    color: var(--text-muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    border-right: 1px solid var(--border);
-    transition: all 0.3s;
-    position: relative;
-  }
-
-  .pipe-step:last-child { border-right: none; }
-
-  .pipe-step.active {
-    background: var(--blue-glow);
-    color: var(--blue-light);
-  }
-
-  .pipe-step .pipe-icon { display: block; font-size: 16px; margin-bottom: 4px; }
-
-  /* Loading state */
-  .loading-bar {
-    height: 3px;
-    background: var(--border);
-    border-radius: 100px;
-    overflow: hidden;
-    margin-bottom: 24px;
-    display: none;
-  }
-  .loading-bar.show { display: block; }
-  .loading-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--blue), var(--accent));
-    border-radius: 100px;
-    width: 0%;
-    transition: width 0.1s linear;
-  }
-
-  /* Footer info */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-top: 20px;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-
-  .info-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 20px;
-  }
-
-  .info-card h3 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    margin-bottom: 10px;
-  }
-
-  .info-card p {
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--text);
-  }
-
-  .mono { font-family: 'IBM Plex Mono', monospace; color: var(--accent); }
-
-  /* Animations */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  .spinner { display: inline-block; animation: spin 0.8s linear infinite; }
-
-  @media (max-width: 600px) {
-    .stats-bar { grid-template-columns: repeat(2, 1fr); }
-    .info-grid { grid-template-columns: 1fr; }
-    .verdict { flex-wrap: wrap; }
-    .verdict-conf { margin-left: 0; }
-  }
-</style>
-</head>
-<body>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-
-<div class="container">
-
-  <!-- Header -->
-  <header>
-    <div class="badge">DEMO SKRIPSI — NAIVE BAYES CLASSIFIER</div>
-    <h1>Analisis Sentimen<br><span>Konten Digital</span></h1>
-    <p class="subtitle">Klasifikasi otomatis sentimen teks berbahasa Indonesia<br>menggunakan algoritma Naïve Bayes + TF-IDF</p>
-  </header>
-
-  <!-- Stats -->
-  <div class="stats-bar">
-    <div class="stat-card">
-      <span class="stat-val">84.6%</span>
-      <span class="stat-label">Akurasi</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-val">4.941</span>
-      <span class="stat-label">Data Latih</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-val">5.000</span>
-      <span class="stat-label">Fitur TF-IDF</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-val">3</span>
-      <span class="stat-label">Kelas Sentimen</span>
-    </div>
-  </div>
-
-  <!-- Input card -->
-  <div class="card">
-    <div class="card-header">
-      <div class="dot"></div>
-      <h2>Input Teks</h2>
-    </div>
-    <textarea id="inputText" placeholder="Masukkan komentar atau teks berbahasa Indonesia yang ingin dianalisis sentimennya..."></textarea>
-
-    <div class="examples">
-      <span class="ex-label">Contoh:</span>
-      <button class="chip neg" onclick="setExample('neg1')">😡 Konten ini sangat berbahaya</button>
-      <button class="chip neg" onclick="setExample('neg2')">🤬 Anak saya terpengaruh konten buruk</button>
-      <button class="chip pos" onclick="setExample('pos1')">😊 Video ini edukatif banget</button>
-      <button class="chip pos" onclick="setExample('pos2')">🌟 Konten yang sangat bermanfaat</button>
-      <button class="chip neu" onclick="setExample('neu1')">😐 Video ini berisi tutorial memasak</button>
-      <button class="chip neu" onclick="setExample('neu2')">📄 Ini adalah berita hari ini</button>
-    </div>
-
-    <div class="actions">
-      <button class="btn-analyze" id="btnAnalyze" onclick="analyze()">
-        <span id="btnText">🔍 Analisis Sentimen</span>
-      </button>
-      <button class="btn-clear" onclick="clearAll()">Hapus</button>
-    </div>
-  </div>
-
-  <!-- Loading bar -->
-  <div class="loading-bar" id="loadingBar">
-    <div class="loading-fill" id="loadingFill"></div>
-  </div>
-
-  <!-- Result card -->
-  <div class="result-card" id="resultCard">
-    <div class="result-header">
-      <div style="display:flex;align-items:center;gap:10px">
-        <div class="dot"></div>
-        <h2>Hasil Analisis</h2>
-      </div>
-      <span class="timestamp" id="timestamp"></span>
-    </div>
-
-    <div class="result-body">
-
-      <!-- Pipeline indicator -->
-      <div class="pipeline" id="pipeline">
-        <div class="pipe-step active" id="ps1"><span class="pipe-icon">⌨️</span>Input</div>
-        <div class="pipe-step active" id="ps2"><span class="pipe-icon">🔡</span>Case Fold</div>
-        <div class="pipe-step active" id="ps3"><span class="pipe-icon">✂️</span>Tokenize</div>
-        <div class="pipe-step active" id="ps4"><span class="pipe-icon">🚫</span>Stopword</div>
-        <div class="pipe-step active" id="ps5"><span class="pipe-icon">🌱</span>Stemming</div>
-        <div class="pipe-step active" id="ps6"><span class="pipe-icon">📊</span>TF-IDF</div>
-        <div class="pipe-step active" id="ps7"><span class="pipe-icon">🧠</span>Naïve Bayes</div>
-      </div>
-
-      <!-- Verdict -->
-      <div class="verdict" id="verdict">
-        <div class="verdict-icon" id="verdictIcon"></div>
-        <div>
-          <div class="verdict-label">Klasifikasi Sentimen</div>
-          <div class="verdict-text" id="verdictText"></div>
-        </div>
-        <div class="verdict-conf">
-          <span class="conf-val" id="confVal"></span>
-          <span class="conf-label">Confidence</span>
-        </div>
-      </div>
-
-      <!-- Probability bars -->
-      <div class="prob-section">
-        <div class="prob-title">Distribusi Probabilitas Kelas</div>
-        <div class="prob-row">
-          <span class="prob-name" style="color:var(--neg)">Negatif</span>
-          <div class="prob-bar-bg"><div class="prob-bar" id="barNeg" style="background:var(--neg)"></div></div>
-          <span class="prob-pct" id="pctNeg">0%</span>
-        </div>
-        <div class="prob-row">
-          <span class="prob-name" style="color:var(--pos)">Positif</span>
-          <div class="prob-bar-bg"><div class="prob-bar" id="barPos" style="background:var(--pos)"></div></div>
-          <span class="prob-pct" id="pctPos">0%</span>
-        </div>
-        <div class="prob-row">
-          <span class="prob-name" style="color:var(--neu)">Netral</span>
-          <div class="prob-bar-bg"><div class="prob-bar" id="barNeu" style="background:var(--neu)"></div></div>
-          <span class="prob-pct" id="pctNeu">0%</span>
-        </div>
-      </div>
-
-      <!-- Tokens after preprocessing -->
-      <div class="tokens-section">
-        <div class="tokens-title">Token Setelah Preprocessing</div>
-        <div class="tokens-wrap" id="tokensWrap"></div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Info cards -->
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>Pipeline Preprocessing</h3>
-      <p>
-        <span class="mono">1.</span> Case Folding → huruf kecil semua<br>
-        <span class="mono">2.</span> Tokenizing → pisahkan per kata<br>
-        <span class="mono">3.</span> Stopword Removal → hapus kata umum<br>
-        <span class="mono">4.</span> Stemming → bentuk dasar kata (Sastrawi)
-      </p>
-    </div>
-    <div class="info-card">
-      <h3>Model Naïve Bayes</h3>
-      <p>
-        <span class="mono">Algoritma:</span> MultinomialNB<br>
-        <span class="mono">Fitur:</span> TF-IDF (max 5.000)<br>
-        <span class="mono">Split:</span> 80% latih / 20% uji<br>
-        <span class="mono">F1-Score:</span> 83.6% (macro avg)
-      </p>
-    </div>
-  </div>
-
-</div>
-
-<script>
-// ─── Indonesian NLP Simulation ─────────────────────────────────────────────
-
-const STOPWORDS = new Set([
-  'yang','dan','di','ke','dari','ini','itu','dengan','untuk','pada','adalah',
-  'dalam','tidak','ada','juga','sudah','saya','kami','kita','mereka','akan',
-  'lebih','bisa','oleh','atau','karena','sebuah','tersebut','sebagai','sangat',
-  'jadi','harus','bagi','anak','anak-anak','ya','ya','nya','kan','lah',
-  'sih','dong','deh','nih','tuh','banget','sekali','pun','juga','lagi','lah',
-  'memang','meski','walaupun','bahwa','apakah','bagaimana','kenapa','siapa',
-  'kapan','dimana','berapa','saat','ketika','setelah','sebelum','jika','kalau',
-  'maka','sehingga','namun','tetapi','tapi','agar','supaya','hingga','sampai',
-  'a','b','c','d','e','f','g','h','i','j','k','l','m',
-  'n','o','p','q','r','s','t','u','v','w','x','y','z'
-]);
-
-// Simplified stemmer (common affixes)
-function stem(word) {
-  const prefixes = ['me','ber','pe','ter','ke','se','di','meng','men','mem','meny','peng','pen','pem','peny'];
-  const suffixes = ['kan','an','i','nya','lah','kah'];
-  let w = word;
-  for (const suf of suffixes) {
-    if (w.endsWith(suf) && w.length > suf.length + 3) {
-      w = w.slice(0, -suf.length); break;
-    }
-  }
-  for (const pre of prefixes) {
-    if (w.startsWith(pre) && w.length > pre.length + 3) {
-      w = w.slice(pre.length); break;
-    }
-  }
-  return w;
-}
-
-function preprocess(text) {
-  // Case fold
-  let t = text.toLowerCase();
-  // Remove punctuation/numbers
-  t = t.replace(/[^a-z\s]/g, ' ');
-  // Tokenize
-  let tokens = t.split(/\s+/).filter(w => w.length > 1);
-  // Stopword removal
-  tokens = tokens.filter(w => !STOPWORDS.has(w));
-  // Stemming
-  tokens = tokens.map(stem).filter(w => w.length > 2);
-  return tokens;
-}
-
-// ─── Sentiment Lexicons ───────────────────────────────────────────────────
-
-const NEG_WORDS = new Set([
-  'berbahaya','bahaya','buruk','jahat','jelek','rusak','toksik','toxic','kasar',
-  'kotor','tidak','benci','hina','caci','maki','ancam','serang','bully','bulying',
-  'tipu','hoaks','hoax','palsu','salah','ngeri','seram','takut','marah','kesal',
-  'kecewa','gagal','hancur','mati','bunuh','racun','penipuan','bohong','kriminal',
-  'cabul','jorok','porno','asusila','nakal','liar','gila','parah','celaka','musuh',
-  'fitnah','hasut','provokas','radikalisme','teror','diskriminasi','leceh','pelecehan'
-]);
-
-const POS_WORDS = new Set([
-  'bagus','baik','indah','cantik','keren','hebat','luar','biasa','pintar','cerdas',
-  'edukatif','edukasi','belajar','inspirasi','motivasi','semangat','positif','kreatif',
-  'bermanfaat','manfaat','berguna','membantu','suka','cinta','senang','bahagia','sukses',
-  'berhasil','prestasi','juara','terbaik','unggul','istimewa','menakjubkan','spektakuler',
-  'menyenangkan','informatif','informasi','pengetahuan','ilmu','wawasan','berkualitas',
-  'terpercaya','tepat','benar','jelas','mudah','inovatif','kreatif','produktif','aman'
-]);
-
-// ─── Naive Bayes Simulation ───────────────────────────────────────────────
-
-function computeSentiment(tokens) {
-  let negScore = 0, posScore = 0, neuScore = 0;
-
-  for (const tok of tokens) {
-    if (NEG_WORDS.has(tok)) negScore += 2.5;
-    else if (POS_WORDS.has(tok)) posScore += 2.5;
-    else neuScore += 0.3;
-  }
-
-  // Length-based priors
-  const n = tokens.length;
-  negScore += 0.1 * n;
-  posScore += 0.1 * n;
-  neuScore += 0.5 + 0.2 * n;
-
-  // Softmax
-  const total = negScore + posScore + neuScore + 0.001;
-  let pNeg = negScore / total;
-  let pPos = posScore / total;
-  let pNeu = neuScore / total;
-
-  // Add noise for realism
-  const noise = () => (Math.random() - 0.5) * 0.04;
-  pNeg = Math.max(0.02, pNeg + noise());
-  pPos = Math.max(0.02, pPos + noise());
-  pNeu = Math.max(0.02, pNeu + noise());
-
-  const tot2 = pNeg + pPos + pNeu;
-  pNeg /= tot2; pPos /= tot2; pNeu /= tot2;
-
-  let label, conf;
-  if (pNeg >= pPos && pNeg >= pNeu) { label = 'negatif'; conf = pNeg; }
-  else if (pPos >= pNeg && pPos >= pNeu) { label = 'positif'; conf = pPos; }
-  else { label = 'netral'; conf = pNeu; }
-
-  return { label, conf, pNeg, pPos, pNeu };
-}
-
-// ─── Examples ─────────────────────────────────────────────────────────────
-
-const examples = {
-  neg1: 'Konten ini sangat berbahaya dan tidak layak untuk ditonton anak-anak! Banyak konten toksik yang merusak moral generasi muda.',
-  neg2: 'Anak saya terpengaruh konten buruk di internet. Ada banyak hoaks dan informasi palsu yang tersebar dan membahayakan.',
-  pos1: 'Video ini sangat edukatif dan bermanfaat untuk anak-anak. Kontennya berkualitas dan membantu proses belajar dengan cara yang menyenangkan.',
-  pos2: 'Konten yang sangat bagus dan inspiratif! Mendorong kreativitas anak dan memberikan pengetahuan yang positif serta berguna.',
-  neu1: 'Video ini berisi tutorial cara memasak nasi goreng. Durasi video sekitar 10 menit dengan penjelasan langkah demi langkah.',
-  neu2: 'Ini adalah berita mengenai perkembangan teknologi informasi dan komunikasi di Indonesia pada tahun 2024.',
-};
-
-function setExample(key) {
-  document.getElementById('inputText').value = examples[key];
-  document.getElementById('resultCard').classList.remove('show');
-}
-
-function clearAll() {
-  document.getElementById('inputText').value = '';
-  document.getElementById('resultCard').classList.remove('show');
-}
-
-// ─── Main Analysis ─────────────────────────────────────────────────────────
-
-function analyze() {
-  const text = document.getElementById('inputText').value.trim();
-  if (!text) {
-    document.getElementById('inputText').focus();
-    document.getElementById('inputText').style.borderBottom = '2px solid var(--neg)';
-    setTimeout(() => document.getElementById('inputText').style.borderBottom = '', 1500);
-    return;
-  }
-
-  const btn = document.getElementById('btnAnalyze');
-  const btnTextEl = document.getElementById('btnText');
-  btn.disabled = true;
-  btnTextEl.innerHTML = '<span class="spinner">⚙️</span> Memproses...';
-
-  // Show loading bar
-  const lb = document.getElementById('loadingBar');
-  const lf = document.getElementById('loadingFill');
-  lb.classList.add('show');
-  lf.style.width = '0%';
-
-  // Animate loading
-  let prog = 0;
-  const iv = setInterval(() => {
-    prog += Math.random() * 18;
-    if (prog > 90) prog = 90;
-    lf.style.width = prog + '%';
-  }, 80);
-
-  // Simulate processing delay
-  setTimeout(() => {
-    clearInterval(iv);
-    lf.style.width = '100%';
-
-    setTimeout(() => {
-      lb.classList.remove('show');
-      btn.disabled = false;
-      btnTextEl.innerHTML = '🔍 Analisis Sentimen';
-      showResults(text);
-    }, 200);
-  }, 900);
-}
-
-function showResults(text) {
-  const tokens = preprocess(text);
-  const result = computeSentiment(tokens);
-
-  // Verdict
-  const icons = { negatif: '⚠️', positif: '✅', netral: '📄' };
-  const labels = { negatif: 'NEGATIF', positif: 'POSITIF', netral: 'NETRAL' };
-
-  const verdict = document.getElementById('verdict');
-  verdict.className = 'verdict ' + result.label;
-  document.getElementById('verdictIcon').textContent = icons[result.label];
-  document.getElementById('verdictText').textContent = labels[result.label];
-  document.getElementById('confVal').textContent = (result.conf * 100).toFixed(1) + '%';
-
-  // Timestamp
-  const now = new Date();
-  document.getElementById('timestamp').textContent =
-    now.toLocaleTimeString('id-ID', {hour:'2-digit',minute:'2-digit',second:'2-digit'});
-
-  // Probability bars (animate)
-  const pcts = [
-    ['barNeg', 'pctNeg', result.pNeg],
-    ['barPos', 'pctPos', result.pPos],
-    ['barNeu', 'pctNeu', result.pNeu],
-  ];
-
-  // Reset first
-  pcts.forEach(([bar, pct]) => {
-    document.getElementById(bar).style.width = '0%';
-    document.getElementById(pct).textContent = '0%';
-  });
-
-  document.getElementById('resultCard').classList.add('show');
-
-  setTimeout(() => {
-    pcts.forEach(([bar, pct, val]) => {
-      document.getElementById(bar).style.width = (val * 100).toFixed(1) + '%';
-      document.getElementById(pct).textContent = (val * 100).toFixed(1) + '%';
-    });
-  }, 50);
-
-  // Tokens display
-  const wrap = document.getElementById('tokensWrap');
-  wrap.innerHTML = '';
-
-  if (tokens.length === 0) {
-    wrap.innerHTML = '<span class="token" style="color:var(--text-muted);font-style:italic">— tidak ada token setelah preprocessing —</span>';
-  } else {
-    const keyTokens = new Set(tokens.filter(t => NEG_WORDS.has(t) || POS_WORDS.has(t)));
-    tokens.slice(0, 30).forEach(tok => {
-      const span = document.createElement('span');
-      span.className = 'token' + (keyTokens.has(tok) ? ' key' : '');
-      span.textContent = tok;
-      wrap.appendChild(span);
-    });
-    if (tokens.length > 30) {
-      const more = document.createElement('span');
-      more.className = 'token';
-      more.style.color = 'var(--text-muted)';
-      more.textContent = `+${tokens.length - 30} lagi`;
-      wrap.appendChild(more);
-    }
-  }
-}
-
-// Enter key shortcut
-document.getElementById('inputText').addEventListener('keydown', e => {
-  if (e.ctrlKey && e.key === 'Enter') analyze();
-});
-</script>
-</body>
-</html>
+Digital
+### dengan Algoritma Naïve Bayes Classifier
+
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square&logo=python)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-MultinomialNB-orange?style=flat-square&logo=scikit-learn)
+![Accuracy](https://img.shields.io/badge/Accuracy-84.6%25-brightgreen?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
+
+> Skripsi Program Studi Informatika — Universitas Teknologi Digital Indonesia (UTDI), Yogyakarta  
+> **Reinardus Guesta Derazio** — NIM 245410096
+
+---
+
+## 📋 Deskripsi
+
+Penelitian ini membangun sistem klasifikasi sentimen otomatis untuk mendeteksi dampak konten digital berbahasa Indonesia, khususnya konten yang berpotensi membahayakan anak di bawah umur. Model menggunakan algoritma **Naïve Bayes Classifier** yang dikombinasikan dengan metode ekstraksi fitur **TF-IDF** untuk mengklasifikasikan teks ke dalam tiga kategori sentimen:
+
+| Kelas | Deskripsi | Proporsi Dataset |
+|-------|-----------|-----------------|
+| 🔴 **Negatif** | Konten toksik, cyberbullying, hoaks | 38% (1.877 data) |
+| 🟢 **Positif** | Konten edukatif, bermanfaat, aman | 35% (1.729 data) |
+| 🟡 **Netral** | Konten informatif tanpa muatan emosi | 27% (1.335 data) |
+
+---
+
+## 📁 Struktur Repository
+
+```
+📦 analisis-sentimen-konten-digital
+ ┣ 📂 demo
+ ┃ ┗ 📄 demo_sentimen.html       # Demo interaktif berbasis browser
+ ┣ 📂 notebook
+ ┃ ┗ 📓 sentiment_analysis.ipynb # Notebook Google Colaboratory
+ ┣ 📂 data
+ ┃ ┗ 📄 dataset_info.md          # Info dataset (sumber: Kaggle)
+ ┣ 📄 README.md
+ ┗ 📄 requirements.txt
+```
+
+---
+
+## ⚙️ Pipeline Sistem
+
+```
+Input Teks
+    │
+    ▼
+┌─────────────────────┐
+│   Text Preprocessing │
+│  ① Case Folding      │  → huruf kecil semua
+│  ② Tokenizing        │  → pisahkan per kata
+│  ③ Stopword Removal  │  → hapus kata tidak bermakna
+│  ④ Stemming (ECS)    │  → bentuk dasar kata (Sastrawi)
+└─────────┬───────────┘
+          │
+          ▼
+┌─────────────────────┐
+│   Ekstraksi Fitur    │
+│   TF-IDF Vectorizer  │  → max_features = 5.000
+└─────────┬───────────┘
+          │
+          ▼
+┌─────────────────────┐
+│  Naïve Bayes (MNB)  │  → MultinomialNB (Scikit-learn)
+└─────────┬───────────┘
+          │
+          ▼
+   Sentimen: Positif / Negatif / Netral
+```
+
+---
+
+## 📊 Hasil Evaluasi Model
+
+| Kelas | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| Negatif | 0.85 | 0.86 | 0.85 | 376 |
+| Positif | 0.86 | 0.87 | 0.87 | 346 |
+| Netral  | 0.78 | 0.79 | 0.79 | 267 |
+| **Macro Avg** | **0.83** | **0.84** | **0.84** | **989** |
+
+**Akurasi Keseluruhan: 84.6%** (836/989 data uji benar)
+
+---
+
+## 🚀 Cara Menjalankan
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/username/analisis-sentimen-konten-digital.git
+cd analisis-sentimen-konten-digital
+```
+
+### 2. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Jalankan di Google Colaboratory
+Buka file `notebook/sentiment_analysis.ipynb` di [Google Colab](https://colab.research.google.com) atau klik badge berikut:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/username/analisis-sentimen-konten-digital/blob/main/notebook/sentiment_analysis.ipynb)
+
+### 4. Jalankan Demo Interaktif
+Buka file `demo/demo_sentimen.html` langsung di browser — tidak perlu instalasi apapun.
+
+---
+
+## 🛠️ Tech Stack
+
+| Komponen | Library / Tool |
+|----------|---------------|
+| Bahasa Pemrograman | Python 3.x |
+| Environment | Google Colaboratory |
+| Preprocessing | `NLTK`, `Sastrawi` |
+| Ekstraksi Fitur | `Scikit-learn` TfidfVectorizer |
+| Model | `Scikit-learn` MultinomialNB |
+| Visualisasi | `Matplotlib`, `Seaborn` |
+| Data Processing | `Pandas`, `NumPy` |
+
+---
+
+## 📦 Requirements
+
+```txt
+pandas>=1.3.0
+numpy>=1.21.0
+scikit-learn>=0.24.0
+nltk>=3.6.0
+PySastrawi>=1.2.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+```
+
+---
+
+## 📂 Dataset
+
+- **Sumber:** [Indonesian Sentiment Analysis Dataset — Kaggle](https://www.kaggle.com)
+- **Jumlah awal:** 5.000 baris
+- **Setelah pembersihan:** 4.941 baris (47 duplikat + 12 kosong dihapus)
+- **Atribut:** `text` (komentar teks), `label` (positif/negatif/netral)
+- **Split:** 80% data latih (3.952) / 20% data uji (989)
+
+---
+
+## 🔑 Contoh Penggunaan (Python)
+
+```python
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import classification_report, accuracy_score
+import pandas as pd
+
+# Load dataset
+df = pd.read_csv('data/dataset.csv')
+
+# Split data
+X_train, X_test, y_train, y_test = train_test_split(
+    df['text_clean'], df['label'],
+    test_size=0.2, random_state=42
+)
+
+# Ekstraksi fitur TF-IDF
+vectorizer = TfidfVectorizer(max_features=5000)
+X_train_vec = vectorizer.fit_transform(X_train)
+X_test_vec  = vectorizer.transform(X_test)
+
+# Training model
+model = MultinomialNB()
+model.fit(X_train_vec, y_train)
+
+# Evaluasi
+y_pred = model.predict(X_test_vec)
+print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+print(classification_report(y_test, y_pred))
+
+# Prediksi teks baru
+def predict_sentiment(text):
+    vec = vectorizer.transform([text])
+    return model.predict(vec)[0]
+
+print(predict_sentiment("Konten ini sangat edukatif dan bermanfaat!"))
+# Output: positif
+```
+
+---
+
+## 📌 Temuan Utama
+
+- Model **Naïve Bayes + TF-IDF** efektif untuk klasifikasi sentimen bahasa Indonesia informal
+- **38% konten** bersentimen negatif → mengkonfirmasi urgensi sistem deteksi otomatis
+- Recall kelas **netral (79.3%)** lebih rendah dibanding negatif (86.2%) dan positif (87.5%) — karena komentar netral bersifat ambigu
+- Tahap **preprocessing** signifikan mengurangi rata-rata token dari **18 → 9 token** per kalimat
+
+---
+
+## 🔭 Pengembangan Lanjutan
+
+- [ ] Implementasi **IndoBERT** untuk meningkatkan recall kelas netral
+- [ ] Perluasan dataset dari Instagram, TikTok, Twitter/X
+- [ ] Deployment antarmuka web menggunakan **Flask** atau **Streamlit**
+- [ ] Klasifikasi **multi-label** (cyberbullying, hoaks, konten toksik)
+
+---
+
+## 👤 Author
+
+**Reinardus Guesta Derazio**  
+Program Studi Informatika — Universitas Teknologi Digital Indonesia  
+📧 NIM: 245410096
+
+---
+
+## 📄 Lisensi
+
+Proyek ini dibuat untuk keperluan akademik. Bebas digunakan sebagai referensi dengan menyertakan atribusi yang sesuai.
